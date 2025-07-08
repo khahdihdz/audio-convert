@@ -1,0 +1,15 @@
+# Thư viện chính cho ứng dụng Kivy
+kivy==2.1.0
+kivymd==1.1.1
+
+# Thư viện để truy cập tính năng thiết bị
+plyer==2.1.0
+
+# Thư viện Java bridge cho Android
+pyjnius==1.4.2
+
+# Thư viện xử lý âm thanh (optional)
+# pydub==0.25.1
+
+# Thư viện hỗ trợ
+requests==2.28.1
