@@ -142,7 +142,7 @@ jobs:
         # presplash.filename = %(source.dir)s/data/presplash.png
         
         # Keystore cho release build
-        # android.keystore = %(source.dir)s/keystore.jks
+        # android.keystore = %(source.dir)s/khahdihdz.jks
         # android.keyalias = myalias
         # android.keystore_passwd = 
         # android.key_passwd = 
@@ -164,10 +164,10 @@ jobs:
         KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
         KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
       run: |
-        echo "$KEYSTORE_BASE64" | base64 -d > keystore.jks
+        echo "$KEYSTORE_BASE64" | base64 -d > khahdihdz.jks
         
         # Cập nhật buildozer.spec với thông tin keystore
-        sed -i 's|# android.keystore = .*|android.keystore = keystore.jks|' buildozer.spec
+        sed -i 's|# android.keystore = .*|android.keystore = khahdihdz.jks|' buildozer.spec
         sed -i 's|# android.keyalias = .*|android.keyalias = myalias|' buildozer.spec
         sed -i 's|# android.keystore_passwd = .*|android.keystore_passwd = '"$KEYSTORE_PASSWORD"'|' buildozer.spec
         sed -i 's|# android.key_passwd = .*|android.key_passwd = '"$KEY_PASSWORD"'|' buildozer.spec
@@ -284,7 +284,7 @@ jobs:
     - name: 🧹 Cleanup
       if: always()
       run: |
-        rm -f keystore.jks
+        rm -f khahdihdz.jks
         rm -rf ~/.buildozer/.gradle
 
   # Job để test APK sau khi build
